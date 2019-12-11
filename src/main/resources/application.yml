@@ -1,1 +1,46 @@
-
+server:
+  port: 80
+  servlet:
+    context-path: /hr
+web:
+  upload-path: hr
+spring:
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
+  resources:
+    static-locations: file:${web.upload-path}
+  datasource:
+    name: hrdb2
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      filters: stat
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/hrdb2?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: 123456
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 20
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.wyu.sig.dao
+  mapperScanPackage: com.wyu.sig.dao
+  configLocation: classpath:mybatis-config.xml
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
