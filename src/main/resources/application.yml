@@ -1,9 +1,9 @@
 server:
   port: 80
   servlet:
-    context-path: /hr
+    context-path: /yolo
 web:
-  upload-path: hr
+  upload-path: static
 spring:
   devtools:
     restart:
@@ -13,14 +13,14 @@ spring:
   resources:
     static-locations: file:${web.upload-path}
   datasource:
-    name: hrdb2
+    name: yolonote_db
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       filters: stat
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/hrdb2?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8
+      url: jdbc:mysql://47.106.165.209:3306/yolonote_db?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8
       username: root
-      password: 123456
+      password: Zxd3116000574
       initial-size: 1
       min-idle: 1
       max-active: 20
@@ -36,8 +36,8 @@ spring:
 # mybatis
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  typeAliasesPackage: com.wyu.sig.dao
-  mapperScanPackage: com.wyu.sig.dao
+  typeAliasesPackage: com.cjw.yolonote.dao
+  mapperScanPackage: com.cjw.yolonote.dao
   configLocation: classpath:mybatis-config.xml
 pagehelper:
   helperDialect: mysql
