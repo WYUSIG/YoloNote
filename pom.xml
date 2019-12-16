@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cjw</groupId>
-    <artifactId>polonote</artifactId>
+    <artifactId>yolonote</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>polonote</name>
+    <name>yolonote</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
