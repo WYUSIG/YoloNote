@@ -10,8 +10,8 @@ spring:
       enabled: true  #设置开启热部署
   freemarker:
     cache: false    #页面不加载缓存，修改即时生效
-  resources:
-    static-locations: file:${web.upload-path}
+#  resources:
+#    static-locations: file:${web.upload-path}
   datasource:
     name: yolonote_db
     type: com.alibaba.druid.pool.DruidDataSource
